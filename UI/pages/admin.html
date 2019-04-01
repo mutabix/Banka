@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,149 @@
     <link rel="stylesheet" href="../assets/css/all.css">
     <link rel="shortcut icon" type="image/x-icon" href="../images/money-check-alt.png">
     <link rel="stylesheet" href="../css/admin.css">
+
     <title>Banka | Admin Dashboard</title>
 </head>
+
 <body>
     <div class="main-container">
-        <header>Header</header>
-        <aside>Side Content</aside>
+        <header>
+            <div class="admin">
+                <img src="../images/business-guy.jpg" alt="">
+                <div class="identity">
+                    <a href="#">
+                        <p>John Doe</p>
+                    </a>
+                    <p>Admin</p>
+                </div>
+
+                <span class="bell-icon">
+                    <i class="fas fa-bell"></i>
+                </span>
+
+                <span class="setting-icon">
+
+                    <i class="fas fa-cog" id="drop-cog"></i>
+                    <ul class="dropdown-menu">
+                        <a href="accounts.html">
+                            <li>Manage Accounts</li>
+                        </a>
+                        <a href="">
+                            <li>Settings</li>
+                        </a>
+                        <a href="">
+                            <li>Logout</li>
+                        </a>
+                    </ul>
+                </span>
+        </header>
+
+        <nav role="navigation">
+            <div id="menuToggle">
+
+                <input type="checkbox" />
+
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <ul id="menu">
+
+                    <a href="#">
+                        <li>
+                            <span class="content-side-icons"><i class="fas fa-envelope"></i></span>
+                            Inbox
+                        </li>
+                    </a>
+
+                    <a href="#">
+                        <li>
+                            <span class="content-side-icons"><i class="fas fa-user-friends"></i></span>
+                            Clients
+                        </li>
+                    </a>
+
+                    <a href="#">
+                        <li>
+                            <span class="content-side-icons"><i class="fas fa-credit-card"></i></span>
+                            Payments
+
+
+                        </li>
+                    </a>
+
+                    <a href="accounts.html">
+                        <li>
+                            <span class="content-side-icons"><i class="fas fa-tasks"></i></span>
+                            Manage Accounts
+
+
+                        </li>
+                    </a>
+
+                    <a href="#">
+                        <li>
+                            <span class="content-side-icons"><i class="fas fa-cog"></i></span>
+                            Settings
+
+
+                        </li>
+                    </a>
+
+                    <a href="#">
+                        <li>
+                            <span class="content-side-icons"><i class="fas fa-power-off"></i></span>
+                            Logout
+
+
+                        </li>
+                    </a>
+
+                </ul>
+            </div>
+        </nav>
+
+
+        <aside class="side-content">
+            <a href="">
+
+                <span>
+                    <i class="fas fa-money-check-alt" style="background: #b8860b"></i>
+                </span>
+                <h1>Ban<span id="banka">ka</span></h1>
+
+            </a>
+
+            <ul class="side-content-list">
+                <a href="#">
+                    <li>
+                        <span class="content-side-icons"><i class="fas fa-envelope"></i></span>
+                        Inbox
+                    </li>
+                </a>
+
+                <a href="#">
+                    <li>
+                        <span class="content-side-icons"><i class="fas fa-user-friends"></i></span>
+                        Clients
+                    </li>
+                </a>
+
+                <a href="#">
+                    <li>
+                        <span class="content-side-icons"><i class="fas fa-credit-card"></i></span>
+                        Payments
+
+
+                    </li>
+                </a>
+
+
+            </ul>
+        </aside>
         <main>Main Content</main>
     </div>
+
 </body>
+
 </html>
