@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="../assets/css/all.css">
     <link rel="shortcut icon" type="image/x-icon" href="../images/money-check-alt.png">
     <link rel="stylesheet" href="../css/admin.css">
-
+    <link rel="stylesheet" href="../css/staff_register.css">
     <title>Banka | Admin Dashboard</title>
 </head>
 
 <body>
-    <div class="main-container">
+    <div class="main-container" id="dashboard">
         <header>
             <div class="admin">
                 <img src="../images/business-guy.jpg" alt="">
@@ -31,7 +31,9 @@
                 <span class="setting-icon">
 
                     <i class="fas fa-cog" id="drop-cog"></i>
+
                     <ul class="dropdown-menu">
+                        
                         <a href="accounts.html">
                             <li>Manage Accounts</li>
                         </a>
@@ -78,6 +80,15 @@
 
                         </li>
                     </a>
+
+                    <a href="#" onclick="document.getElementById('form').style.display='block'">
+                            <li>
+                                <span class="content-side-icons"><i class="fas fa-plus"></i></span>
+                                Create account
+    
+    
+                            </li>
+                        </a>
 
                     <a href="accounts.html">
                         <li>
@@ -145,12 +156,59 @@
                     </li>
                 </a>
 
+                <a href="#" onclick="document.getElementById('form').style.display='block'">
+                    <li>
+                        <span class="content-side-icons"><i class="fas fa-plus"></i></span>
+
+                        Create Account
+                    </li>
+                </a>
+
+
 
             </ul>
         </aside>
         <main>Main Content</main>
+
+        <div class="form-container" id="form">
+            <span class="close" title="Close Form" id="closebtn">&times;</span>
+
+            <form action="" class="form-content">
+                <label for="firstname">First Name
+                    <input type="text" name="firstname" id="" required>
+                </label>
+
+                <label for="lastname">Last Name
+                    <input type="text" name="firstname" id="" required>
+                </label>
+
+                <label for="email">Email
+                    <input type="email" name="email" id="" required>
+                </label>
+
+                <label for="password">Password
+                    <input type="password" name="firstname" id="" required>
+                </label>
+
+                <label for="checkbox"> Admin ?
+                    <input type="checkbox">
+                </label>
+
+                <label for="checkbox"> Staff ?
+                        <input type="checkbox"`>
+                    </label>
+
+                <div class="clearfix">
+
+                    <button type="button" class="cancelbtn">Cancel</button>
+                    <button type="button" class="createbtn">Create</button>
+
+                </div>
+            </form>
+        </div>
     </div>
 
+    <script src="../js/staff_register.js"></script>
 </body>
 
 </html>
