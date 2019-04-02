@@ -7,29 +7,7 @@ body {
 /*  Laptop Screen */
 
 
-  header {
-    padding: 12px;
-    display: flex;
-    flex-direction: row;
-  }
 
-  header a{
-    display: flex;
-    text-decoration: none;
-    color: #000;
-  }
-
-  header i {
-    margin-top: 24px;
-    font-size: 27px;
-    margin-right: 10px;
-    border-radius: 2px;
-  }
-
-  #banka {
-    color: #b8860b;
-    margin: 0;
-  }
 
   h3 {
     text-align: center;
@@ -48,6 +26,8 @@ body {
     border: 2px solid rgba(220, 220, 220, 0.4);
     background-color: #fff;
     border-radius: 8px;
+     width: 100%;
+   
 
 
   }
@@ -55,11 +35,14 @@ body {
   .table-head th {
     padding: 25px;
     border-bottom: 2px solid rgba(220, 220, 220, 0.4);
+   
+   
 
   }
 
   .data-head td {
     padding: 30px;
+    width: 100%;
     border-bottom: 2px solid rgba(220, 220, 220, 0.4);
   }
 
@@ -202,29 +185,7 @@ body {
 /*  Mobile Screen  */
 @media (max-width: 700px) {
 
-  header {
-    padding: 12px;
-    display: flex;
-    flex-direction: row;
-  }
-
-  header a{
-    display: flex;
-    text-decoration: none;
-    color: #000;
-  }
-
-  header i {
-    margin-top: 24px;
-    font-size: 27px;
-    margin-right: 10px;
-    border-radius: 2px;
-  }
-
-  #banka {
-    color: #b8860b;
-    margin: 0;
-  }
+  
 
   h3 {
     text-align: center;
@@ -233,7 +194,7 @@ body {
 
   .accounts-table {
     display: grid;
-    width: 700px;
+    max-width: 700px;
     margin: 0 auto;
 
 
