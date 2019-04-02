@@ -8,7 +8,7 @@ body {
 
 @media(min-width: 760px) {
 
-  
+
 
   h3 {
     text-align: center;
@@ -17,7 +17,7 @@ body {
 
   .accounts-table {
     display: grid;
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto;
 
 
@@ -186,29 +186,7 @@ body {
 /*  Mobile Screen  */
 @media (max-width: 700px) {
 
-  header {
-    padding: 12px;
-    display: flex;
-    flex-direction: row;
-  }
-
-  header a{
-    display: flex;
-    text-decoration: none;
-    color: #000;
-  }
-
-  header i {
-    margin-top: 24px;
-    font-size: 27px;
-    margin-right: 10px;
-    border-radius: 2px;
-  }
-
-  #banka {
-    color: #b8860b;
-    margin: 0;
-  }
+  
 
   h3 {
     text-align: center;
@@ -217,7 +195,7 @@ body {
 
   .accounts-table {
     display: grid;
-    width: 700px;
+    max-width: 700px;
     margin: 0 auto;
 
 
