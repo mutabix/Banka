@@ -7,7 +7,7 @@ body {
 /*  Laptop Screen */
 
 
-
+@media(min-width: 760px) {
 
   h3 {
     text-align: center;
