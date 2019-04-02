@@ -1,0 +1,116 @@
+body{
+    padding: 0; 
+    margin: 0; 
+    font-family: 'Ubuntu', sans-serif;
+    background: rgba(220, 220, 220, 0.5);
+}
+
+@media(min-width: 760px){
+
+   .main-container{
+       display: grid;
+       grid-template-columns: repeat(12, 1fr);
+       grid-auto-rows: minmax(100px, auto);
+       min-height: 700px;
+    }
+
+    header {
+        display: grid;
+        grid-column: 1/13;
+        height: 100px;
+        border-bottom: 1px solid #DBE0E4;
+        background: #fff;
+
+    }
+
+    header .logo{
+        display: flex;
+    }
+
+    .logo #logo-icon{
+        margin: 30px  10px auto;
+        font-size: 20px;
+    }
+
+    .logo h2{
+        margin-top: 30px;
+    }
+
+    #banka {
+        color: #b8860b;
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .cashier {
+        grid-column: 13;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .cashier img {
+        margin: 25px 10px 0 0;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    .cashier p {
+        margin-top: 25px;
+
+    }
+
+    main{
+        grid-column: span 13;
+        grid-row: 2/4;
+        top: 0;
+        height: 700px;
+    }
+
+    .main-content{
+        display: flex;
+        flex-direction: row;
+        margin: 30px auto;
+        width: 80%;
+    }
+
+    .transaction-card {
+        margin: 180px  40px auto;
+        background: #fff;
+        border-radius: 10px;
+        width: 50%; 
+        padding: 50px;
+        height: 100px;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        border: 2px;
+
+    }
+
+    .transaction-card input{
+        display: block;
+        padding: 8px;
+        border: 1px solid #000; 
+        border-radius: 6px;
+        margin: 25px 10px 30px 0px;
+       
+    }
+
+
+    .transaction-card button{
+       padding: 30px auto; 
+       background: #008000;
+       width: 30%;
+       height: 30%;
+       border-radius: 8px;
+       font-size: 17px;
+       border: none;
+       font-family: 'Ubuntu', sans-serif;
+       cursor: pointer;
+    }
+
+
+}
