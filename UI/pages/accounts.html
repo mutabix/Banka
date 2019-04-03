@@ -30,15 +30,16 @@
             </thead>
 
             <tbody>
-                <tr class="data-head">
+                <tr class="data-head" data-id="1" data-toggle="modal" data-target="#accountModal">
                     <td class="data">
                         <li class="client-details">
-                            <img src="../images/business-guy.jpg" alt="">
-                            <p>John Doe</p>
+                            <img src="../images/hamdu.jpg" alt=""
+                                onclick="document.getElementById('firstModal').style.display='block'">
+                            <p>Hamdu Bashan</p>
                         </li>
                     </td>
                     <td class="data">Savings</td>
-                    <td class="data">1000220003</td>
+                    <td class="data">00001</td>
                     <td class="data" id="switch-button">
                         <label class="switch switch-left-right">
                             <input class="switch-input" type="checkbox" />
@@ -51,15 +52,18 @@
                     </td>
                     <td class="data"></td>
                 </tr>
-                <tr class="data-head">
+
+
+                <tr class="data-head" data-id="2" data-toggle="modal" data-target="#accountModal">
                     <td class="data">
                         <li class="client-details">
-                            <img src="../images/business-guy.jpg" alt="">
-                            <p>John Doe</p>
+                            <img src="../images/jack.jpg" alt=""
+                                onclick="document.getElementById('secondModal').style.display='block'">
+                            <p>Jack Blake</p>
                         </li>
                     </td>
                     <td class="data"> Current</td>
-                    <td class="data">1000220003</td>
+                    <td class="data">00002</td>
                     <td class="data" id="switch-button">
                         <label class="switch switch-left-right">
                             <input class="switch-input" type="checkbox" />
@@ -72,15 +76,17 @@
                     </td>
                     <td class="data"> </td>
                 </tr>
-                <tr class="data-head">
+
+                <tr class="data-head" data-id="3" data-toggle="modal" data-target="#accountModal">
                     <td class="data">
                         <li class="client-details">
-                            <img src="../images/business-guy.jpg" alt="">
-                            <p>John Doe</p>
+                            <img src="../images/yun.jpg" alt=""
+                                onclick="document.getElementById('thirdModal').style.display='block'">
+                            <p>Yun Jin</p>
                         </li>
                     </td>
                     <td class="data">Savings</td>
-                    <td class="data">1000220003</td>
+                    <td class="data">00003</td>
                     <td class="data" id="switch-button">
                         <label class="switch switch-left-right">
                             <input class="switch-input" type="checkbox" />
@@ -93,10 +99,48 @@
                     </td>
                     <td class="data"></td>
                 </tr>
+
+
             </tbody>
         </table>
     </div>
 
+    <div class="modal-container">
+
+        <div class="modal-wrapper first-modal" id="firstModal">
+            <span class="close" title="Close" id="closeOne">&times;</span>
+            <ul class="modal-items">
+                <img src="../images/hamdu.jpg" alt="">
+                <li>Name: Hamdu Bashan</li>
+                <li>Account Type: Savings</li>
+                <li>Account Number: 00001</li>
+            </ul>
+        </div>
+
+        <div class="modal-wrapper second-modal" id="secondModal">
+            <span class="close" title="Close" id="closeTwo">&times;</span>
+            <ul class="modal-items">
+                <img src="../images/jack.jpg" alt="">
+                <li>Name: Jack Blake</li>
+                <li>Account Type: Current </li>
+                <li>Account Number: 00002</li>
+            </ul>
+        </div>
+
+
+        <div class="modal-wrapper  third-modal" id="thirdModal">
+            <span class="close" title="Close" id="closeThree">&times;</span>
+            <ul class="modal-items">
+                <img src="../images/yun.jpg" alt="">
+                <li>Name: Yun Ji</li>
+                <li>Account Type: Savings</li>
+                <li>Account Number: 00003</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="../js/accountModal.js"></script>
 </body>
 
 </html>

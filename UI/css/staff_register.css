@@ -76,6 +76,7 @@ body {
 
 
     /* Form Content/Box */
+
     .form-content {
         background-color: #fefefe;
         margin: 5% auto 15% auto;
@@ -90,12 +91,6 @@ body {
         padding: 20px;
     }
 
-
-    /* Style the horizontal ruler */
-    hr {
-        border: 1px solid #f1f1f1;
-        margin-bottom: 25px;
-    }
 
 
     .close {
@@ -114,6 +109,7 @@ body {
     }
 
     /* Clear floats */
+
     .clearfix::after {
         content: "";
         clear: both;
@@ -125,6 +121,7 @@ body {
 
 
 /* Change styles for cancel button and signup button on extra small screens */
+
 @media(max-width: 700px) {
 
     * {
@@ -212,6 +209,7 @@ body {
 
 
     /* Style the horizontal ruler */
+    
     hr {
         border: 1px solid #f1f1f1;
         margin-bottom: 25px;
