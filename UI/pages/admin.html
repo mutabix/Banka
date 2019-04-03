@@ -33,7 +33,7 @@
                     <i class="fas fa-cog" id="drop-cog"></i>
 
                     <ul class="dropdown-menu">
-                        
+
                         <a href="accounts.html">
                             <li>Manage Accounts</li>
                         </a>
@@ -82,13 +82,13 @@
                     </a>
 
                     <a href="#" onclick="document.getElementById('form').style.display='block'">
-                            <li>
-                                <span class="content-side-icons"><i class="fas fa-plus"></i></span>
-                                Create account
-    
-    
-                            </li>
-                        </a>
+                        <li>
+                            <span class="content-side-icons"><i class="fas fa-plus"></i></span>
+                            Create account
+
+
+                        </li>
+                    </a>
 
                     <a href="accounts.html">
                         <li>
@@ -131,7 +131,15 @@
 
             </a>
 
+
             <ul class="side-content-list">
+
+                <a href="#" id="accounts">
+                    <li>
+                        <span class="content-side-icons"><i class="fas fa-desktop"></i></span>
+                        Dashboard
+                    </li>
+                </a>
                 <a href="#">
                     <li>
                         <span class="content-side-icons"><i class="fas fa-envelope"></i></span>
@@ -167,7 +175,9 @@
 
             </ul>
         </aside>
-        <main>Main Content</main>
+        <main id="dashboard-info">
+
+        </main>
 
         <div class="form-container" id="form">
             <span class="close" title="Close Form" id="closebtn">&times;</span>
@@ -178,15 +188,15 @@
                 </label>
 
                 <label for="lastname">Last Name
-                    <input type="text" name="firstname" id="" required>
+                    <input type="text" name="firstname"  required>
                 </label>
 
                 <label for="email">Email
-                    <input type="email" name="email" id="" required>
+                    <input type="email" name="email" required>
                 </label>
 
                 <label for="password">Password
-                    <input type="password" name="firstname" id="" required>
+                    <input type="password" name="firstname" required>
                 </label>
 
                 <label for="checkbox"> Admin ?
@@ -194,8 +204,8 @@
                 </label>
 
                 <label for="checkbox"> Staff ?
-                        <input type="checkbox"`>
-                    </label>
+                    <input type="checkbox" `>
+                </label>
 
                 <div class="clearfix">
 
@@ -208,6 +218,7 @@
     </div>
 
     <script src="../js/staff_register.js"></script>
-</body>
+    <script src="../js/admin.js"></script>
 
+</body>
 </html>
