@@ -55,7 +55,7 @@ body {
   .data button {
     padding: 6px;
     cursor: pointer;
-    background: red;
+    background-color: #f44336;
     border: 1px#ccc;
     font-size: 17px;
     border-radius: 5px;

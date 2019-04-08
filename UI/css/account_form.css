@@ -12,21 +12,19 @@ body {
     }
 
 
-    input[type=text],
-    input[type=email],
-    input[type=password] {
+    input[type=text], 
+    select[name=account] {
         width: 100%;
         padding: 15px;
         margin: 5px 0 22px 0;
         display: inline-block;
         border: none;
         background: #f1f1f1;
-        border-radius: 5px;
+        border-radius: 6px;
     }
 
-    input[type=text]:focus,
-    input[type=email]:focus,
-    input[type=password]:focus {
+    select[name="account"]:focus,
+    input[type=text]:focus{
         background-color: #ddd;
         outline: none;
     }
@@ -57,7 +55,7 @@ body {
         width: 40%;
         margin: 12.5px;
         padding: 15px;
-        border-radius: 5px;
+        border-radius: 6px;
     }
 
 
@@ -133,8 +131,7 @@ body {
 
 
     input[type=text],
-    input[type=email],
-    input[type=password] {
+    select[name=account] {
         width: 100%;
         padding: 15px;
         margin: 5px 0 22px 0;
@@ -142,11 +139,11 @@ body {
         border: none;
         background: #f1f1f1;
         border-radius: 6px;
+
     }
 
     input[type=text]:focus,
-    input[type=email]:focus,
-    input[type=password]:focus {
+    select[type=account]:focus{
         background-color: #ddd;
         outline: none;
     }
@@ -155,7 +152,7 @@ body {
         background-color: #4CAF50;
         color: white;
         padding: 14px 20px;
-        margin: 8px 0;
+        margin: 10px 0;
         border: none;
         cursor: pointer;
         width: 100%;
