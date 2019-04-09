@@ -3,12 +3,12 @@ import Joi from 'joi';
 
 const signUpValidator = (user) => {
     const schema = {
-        firstName: Joi.string().regex(/^\S+$/).min(3).max(20).required(),
-        lastName: Joi.string().regex(/^\S+$/).min(3).max(20).required(),
+        first_name: Joi.string().regex(/^\S+$/).min(3).max(20).required(),
+        last_name: Joi.string().regex(/^\S+$/).min(3).max(20).required(),
         email: Joi.string().regex(/^\S+$/).email().required(),
         type: Joi.string().regex(/^\S+$/).min(3).max(20).required(),
-        passWord: Joi.string().regex(/^\S+$/).min(3).max(255).required(), 
-        isAdmin: Joi.boolean().invalid(false)
+        password: Joi.string().regex(/^\S+$/).min(3).max(255).required(), 
+        is_admin: Joi.boolean().invalid(false)
 
     };
 
