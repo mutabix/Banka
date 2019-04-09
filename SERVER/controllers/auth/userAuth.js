@@ -3,13 +3,21 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import config from '../../config/config';
 import signUpValidator from '../../helpers/signUpValidator';
-import userRouter from '../../routes/auth/userRouter';
 
 
 
 
 class User {
-    static userSignUp(req, res, next) {
+    static userSignUp(req, res) {
+
+        const {
+            error
+        } = signUpValidator(req.body);
+
+        if(error) return res.send({
+            status: 404,
+            error: error.details[0].message
+        })
 
         bcrypt.hash(req.body.password, 8)
             .then((hashedPassword) => {
@@ -42,17 +50,23 @@ class User {
 
     }
 
-    static userLogIn(req, res, next) {
+    static userLogIn(req, res) {
         const email = req.body.email;
         const password = req.body.password;
 
         const findUser = users.find(us => us.email == email); 
 
-            if (!findUser) return res.status(404).send('User not found!');
+            if (!findUser) return res.status(404).send({
+                status: 404,
+                error: 'User Not Found!'
+            });
 
             bcrypt.compare(password, findUser.password)
                 .then((result) => {
-                    if (!result) return res.status(401).send('Password not valid!');
+                    if (!result) return res.status(401).send({
+                        status: 401, 
+                        error: 'Invalid Password!'
+                    });
 
                     const accessToken = jwt.sign({
                         id: findUser.id,
@@ -65,7 +79,7 @@ class User {
                         usesToken: accessToken,
                         data: findUser
                     });
-                }).catch(error => console.log(error));
+                }).catch(error => (res.send(error)));
     }
 }
 
