@@ -8,7 +8,7 @@ const signUpValidator = (user) => {
         email: Joi.string().regex(/^\S+$/).email().required(),
         type: Joi.string().regex(/^\S+$/).min(3).max(20).required(),
         password: Joi.string().regex(/^\S+$/).min(3).max(255).required(), 
-        is_admin: Joi.boolean().invalid(false)
+        is_admin: Joi.boolean()
 
     };
 
