@@ -1,6 +1,7 @@
-import users from '../../models/user';
+import lodash from 'lodash';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import users from '../../models/user';
 import config from '../../config/config';
 import signUpValidator from '../../helpers/signUpValidator';
 
@@ -24,8 +25,8 @@ class User {
 
                 const user = {
                     id: users.length + 1,
-                    first_name: req.body.firstName,
-                    last_name: req.body.lastName,
+                    first_name: req.body.first_name,
+                    last_name: req.body.last_name,
                     email: req.body.email,
                     password: hashedPassword,
                     type: req.body.type,
@@ -39,18 +40,19 @@ class User {
                     expiresIn: 3600
                 });
 
-
+                console.log(user);
                 users.push(user);
                 res.status(201).send({
                     status: 201,
                     userToken: token,
-                    data: user
+                    data: lodash.pick(user, ['id', 'first_name', 'last_name', 'email', 'type', 'is_admin'])
                 });
             }).catch(error => (res.send(error)));
 
     }
 
     static userLogIn(req, res) {
+
         const email = req.body.email;
         const password = req.body.password;
 
@@ -77,7 +79,7 @@ class User {
                     res.status(200).send({
                         status: 200,
                         usesToken: accessToken,
-                        data: findUser
+                        data: lodash.pick(findUser, ['id', 'email'])
                     });
                 }).catch(error => (res.send(error)));
     }
