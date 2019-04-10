@@ -18,7 +18,7 @@ class User {
         if(error) return res.send({
             status: 404,
             error: error.details[0].message
-        })
+        });
 
         bcrypt.hash(req.body.password, 8)
             .then((hashedPassword) => {

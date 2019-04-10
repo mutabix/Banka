@@ -1,6 +1,7 @@
 
 import express from 'express'; 
 import userRouter from './routes/auth/userRouter';
+import accountRouter from './routes/accountRouter';
 
 
 const app = express(); 
@@ -8,6 +9,8 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json()); 
 
 app.use(userRouter);
+app.use(accountRouter);
+
 
 
 app.get('/', (req, res) =>{
