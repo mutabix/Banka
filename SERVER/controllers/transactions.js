@@ -1,7 +1,6 @@
 import transactions from '../models/transaction';
 import debitValidator from '../helpers/debitValidator';
 import creditValidator from '../helpers/creditValidator';
-import accounts from '../models/account';
 import moment from 'moment';
 
 
@@ -45,7 +44,6 @@ class Transaction {
             new_balance: sum
         }
 
-        console.log('New Debit', newDebit);
         transactions.push(newDebit);
         res.status(201).send({
             status: 201,
@@ -101,7 +99,6 @@ class Transaction {
                 new_balance: balance
             }
 
-            console.log('New Credit', newCredit);
             transactions.push(newCredit);
             res.status(201).send({
                 status: 201,

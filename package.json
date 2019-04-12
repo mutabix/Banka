@@ -4,14 +4,19 @@
   "description": "Banka is a light-weight core banking application that powers banking operations like account",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-watch ./SERVER/server.js"
+    "start": "babel-watch ./SERVER/server.js",
+    "test": "NODE_ENV=test nyc --reporter=text --reporter=lcov mocha --timeout 1500 --require @babel/polyfill --require @babel/register SERVER/tests/**/*.test.js --exit",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Moise1/Banka.git"
   },
-  "keywords": [
+  "engines": {
+    "node": "10.15.0",
+    "npm": "6.4.1"
+  },
+    "keywords": [
     "banking",
     "application",
     "nodejs",
@@ -36,6 +41,18 @@
     "moment": "^2.24.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0"
+    "@babel/polyfill": "^7.4.3",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-stage-0": "^7.0.0",
+    "@babel/register": "^7.4.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "dotenv": "^7.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.1.3",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^13.3.0"
   }
 }
