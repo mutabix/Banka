@@ -2,6 +2,8 @@
 import express from 'express'; 
 import userRouter from './routes/auth/userRouter';
 import accountRouter from './routes/accountRouter';
+import transactionRouter from './routes/transactionRouter';
+
 
 
 const app = express(); 
@@ -10,6 +12,8 @@ app.use(express.json());
 
 app.use(userRouter);
 app.use(accountRouter);
+app.use(transactionRouter);
+
 
 
 

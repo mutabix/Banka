@@ -1,6 +1,6 @@
+import moment from 'moment';
 import accounts from '../models/account'; 
 import accountValidator from '../helpers/accountValidator';
-import moment from 'moment';
 
 class Account{
 
@@ -46,7 +46,6 @@ class Account{
         let m = moment();
         let modified_on = m.format('dddd, MMMM Do YYYY, h:mm a');
 
-        console.log(foundAcc);
 
         if(!foundAcc)return res.status(404).send({
             status: 404, 
