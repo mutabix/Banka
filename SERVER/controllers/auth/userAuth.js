@@ -45,7 +45,6 @@ const User = {
                 expiresIn: 3600
             });
 
-            console.log(user);
             users.push(user);
             res.status(201).send({
                 status: 201,
@@ -76,7 +75,7 @@ const User = {
 
         const { email, password } = req.body;
 
-        const  findUser =  await users.find(us => us.email == email); 
+        const  findUser =  await users.find( us => us.email == email); 
 
             if (!findUser) return res.status(404).send({
                 status: 404,
@@ -99,7 +98,6 @@ const User = {
                 expiresIn: 3600
             });
 
-            console.log(findUser);
             res.status(200).send({
                 status: 200,
                 message: 'Successfully Logged In',
