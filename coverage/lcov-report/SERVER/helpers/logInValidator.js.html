@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for SERVER/helpers/signUpValidator.js</title>
+    <title>Code coverage report for SERVER/helpers/logInValidator.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">All files</a> / <a href="index.html">SERVER/helpers</a> signUpValidator.js
+      <a href="../../index.html">All files</a> / <a href="index.html">SERVER/helpers</a> logInValidator.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">44.44% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>9/9</span>
+        <span class='fraction'>4/9</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,21 +30,21 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">44.44% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>9/9</span>
+        <span class='fraction'>4/9</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -75,26 +75,17 @@
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -105,30 +96,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Joi from 'joi';
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcryptjs';
 &nbsp;
-const signUpFields = (user) =&gt; {
-    const schema = {
-        first_name: Joi.string().regex(/^\S+$/).min(3).max(20).required(),
-        last_name: Joi.string().regex(/^\S+$/).min(3).max(20).required(),
+const loginFields = (<span class="fstat-no" title="function not covered" >findUser) =&gt; {</span>
+    const schema = <span class="cstat-no" title="statement not covered" >{</span>
         email: Joi.string().regex(/^\S+$/).email().required(),
-        type: Joi.string().regex(/^\S+$/).min(3).max(20).required(),
-        password: Joi.string().regex(/^\S+$/).min(3).max(255).required(), 
-        is_admin: Joi.boolean()
+        password: Joi.string().regex(/^\S+$/).min(3).max(255).required(),
 &nbsp;
     };
 &nbsp;
-    const options = {
+    const options = <span class="cstat-no" title="statement not covered" >{</span>
         language: {
             key: '{{key}} ',
             string: {
@@ -139,16 +125,15 @@ const signUpFields = (user) =&gt; {
         }
     }
 &nbsp;
-    return Joi.validate(user, schema, options);
+<span class="cstat-no" title="statement not covered" >    return J</span>oi.validate(findUser, schema, options);
+}
+&nbsp;
+const comparePassword = <span class="fstat-no" title="function not covered" >(e</span>ncrypted_password, password) =&gt; {
+    const compared_password = <span class="cstat-no" title="statement not covered" >bcrypt.c</span>ompare(password, encrypted_password);
+<span class="cstat-no" title="statement not covered" >    return c</span>ompared_password;
 };
 &nbsp;
-const encryptPassword = (password) =&gt; {
-    const encrypted_password = bcrypt.hash(password, 10);
-    return encrypted_password;
-};
-&nbsp;
-&nbsp;
-export {signUpFields, encryptPassword};</pre></td></tr>
+export { loginFields, comparePassword};</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->

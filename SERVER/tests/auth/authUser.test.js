@@ -20,7 +20,7 @@ describe('User Authentication', () => {
             chai
                 .request(app)
                 .post('/auth/signup')
-                .send(user)
+                .send(newUser)
                 .end((err, res) => {
                     res.body.status.should.be.eql(201);
                     expect(newUser).is.an('object');
