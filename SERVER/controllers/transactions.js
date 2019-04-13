@@ -4,9 +4,9 @@ import creditValidator from '../helpers/creditValidator';
 import moment from 'moment';
 
 
-class Transaction {
+const Transaction = {
 
-    static debitAccount(req, res) {
+    async debitAccount(req, res) {
 
         const {
             error
@@ -32,28 +32,37 @@ class Transaction {
         y = old_balance;
         sum = parseFloat(x) + parseFloat(y);
 
+        try {
 
-        const newDebit = {
-            created_on: created_on,
-            transaction_id: transactions.length + 1,
-            account_number: 2,
-            cashier: parseInt(cashier),
-            transaction_type: transaction_type,
-            old_balance: parseFloat(old_balance),
-            amount: parseFloat(amount),
-            new_balance: sum
+            const newDebit = {
+                created_on: created_on,
+                transaction_id: transactions.length + 1,
+                account_number: 2,
+                cashier: parseInt(cashier),
+                transaction_type: transaction_type,
+                old_balance: parseFloat(old_balance),
+                amount: parseFloat(amount),
+                new_balance: sum
+            }
+
+            transactions.push(newDebit);
+            res.status(201).send({
+                status: 201,
+                message: 'Amount successfully debited!',
+                data: newDebit
+            })
+
+        } catch (eror) {
+            return res.status(400).send({
+                status: 400,
+                error: error
+            })
         }
 
-        transactions.push(newDebit);
-        res.status(201).send({
-            status: 201,
-            message: 'Amount successfully debited!',
-            data: newDebit
-        })
-    }
+    },
 
 
-    static creditAccount(req, res) {
+    async creditAccount(req, res) {
         const {
             error
         } = creditValidator(req.body);
@@ -78,37 +87,44 @@ class Transaction {
         y = old_balance;
         balance = parseFloat(x) - parseFloat(y);
 
+        try {
 
-        if (y == 0 || y < amount ) {
+            if (y == 0 || y < amount) {
 
-            return res.status(400).send({
-                status: 400,
-                error: 'You have insufficent balance!'
-            })
+                return res.status(400).send({
+                    status: 400,
+                    error: 'You have insufficent balance!'
+                })
 
-        } else {
+            } else {
 
-            const newCredit = {
-                created_on: created_on,
-                transaction_id: transactions.length + 1,
-                account_number: 2,
-                cashier: parseInt(cashier),
-                transaction_type: transaction_type,
-                old_balance: parseFloat(old_balance),
-                amount: parseFloat(amount),
-                new_balance: balance
+                const newCredit = {
+                    created_on: created_on,
+                    transaction_id: transactions.length + 1,
+                    account_number: 2,
+                    cashier: parseInt(cashier),
+                    transaction_type: transaction_type,
+                    old_balance: parseFloat(old_balance),
+                    amount: parseFloat(amount),
+                    new_balance: balance
+                }
+
+                transactions.push(newCredit);
+                res.status(201).send({
+                    status: 201,
+                    message: 'Amount successfully credited!',
+                    data: newCredit
+                })
+
+
             }
 
-            transactions.push(newCredit);
-            res.status(201).send({
-                status: 201,
-                message: 'Amount successfully credited!',
-                data: newCredit
+        } catch (error) {
+            return res.status(400).send({
+                status: 400,
+                error: error
             })
-
-
         }
-
     }
 }
 

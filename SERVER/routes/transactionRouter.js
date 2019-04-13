@@ -3,16 +3,17 @@ import { Router, json} from 'express';
 
 import  Transaction  from '../controllers/transactions';
 
+const {debitAccount, creditAccount} = Transaction;
+
 
 const transactionRouter = express.Router(); 
 
 transactionRouter.use(json()); 
 
 
-transactionRouter.post('/api/v1/transactions/:account_number/debit', Transaction.debitAccount);
+transactionRouter.post('/api/v1/transactions/:account_number/debit', debitAccount);
 
-transactionRouter.post('/api/v1/transactions/:account_number/credit', Transaction.creditAccount);
-
+transactionRouter.post('/api/v1/transactions/:account_number/credit', creditAccount);
 
 
 export default transactionRouter;
