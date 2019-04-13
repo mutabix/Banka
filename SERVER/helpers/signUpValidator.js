@@ -1,7 +1,7 @@
 import Joi from 'joi';
+import bcrypt from 'bcryptjs'
 
-
-const signUpValidator = (user) => {
+const signUpFields = (user) => {
     const schema = {
         first_name: Joi.string().regex(/^\S+$/).min(3).max(20).required(),
         last_name: Joi.string().regex(/^\S+$/).min(3).max(20).required(),
@@ -26,6 +26,10 @@ const signUpValidator = (user) => {
     return Joi.validate(user, schema, options);
 };
 
+const encryptPassword = (password) => {
+    const encrypted_password = bcrypt.hash(password, 10);
+    return encrypted_password;
+};
 
 
-export default signUpValidator;
+export {signUpFields, encryptPassword};
