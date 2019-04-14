@@ -16,7 +16,7 @@
     "node": "10.15.0",
     "npm": "6.4.1"
   },
-    "keywords": [
+  "keywords": [
     "banking",
     "application",
     "nodejs",
@@ -47,6 +47,7 @@
     "@babel/register": "^7.4.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
+    "coveralls": "^3.0.3",
     "dotenv": "^7.0.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
