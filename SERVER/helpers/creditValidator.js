@@ -4,10 +4,10 @@ import Joi from 'joi';
 const creditValidator = (newCredit) => {
     const schema = {
 
-        old_balance: Joi.number().required(),
-        amount: Joi.number().required(),
-        cashier: Joi.number().integer().required(),
-        transaction_type: Joi.string().regex(/^\S+$/).min(3).max(50).required(),
+        old_balance: Joi.number(),
+        amount: Joi.number(),
+        cashier: Joi.number().integer(),
+        transaction_type: Joi.string().regex(/^\S+$/).min(3).max(50),
 
     };
 

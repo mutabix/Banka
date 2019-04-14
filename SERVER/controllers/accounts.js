@@ -19,7 +19,8 @@ const Account = {
         let real_date = m.format('dddd, MMMM Do YYYY, h:mm a');
 
         try {
-            const newAccount = {
+
+            const account = {
                 created_on: real_date,
                 account_number: accounts.length + 1,
                 owner: req.body.owner,
@@ -28,16 +29,16 @@ const Account = {
                 balance: parseFloat(req.body.balance)
             }
 
-            accounts.push(newAccount);
+            accounts.push(account);
             res.status(201).send({
                 status: 201,
-                data: newAccount
+                data: account
             })
 
 
         } catch (error) {
-            res.status(400).send({
-                status: 400,
+            res.status(404).send({
+                status: 404,
                 error: error
             })
         }

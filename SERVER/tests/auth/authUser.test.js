@@ -1,14 +1,15 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../server';
-
 const should = chai.should();
 const expect = chai.expect;
+
 chai.use(chaiHttp);
 
 describe('User Authentication', () => {
     describe('Sign Up', () => {
         it('Should sign up a new user', (done) => {
+
             const newUser = {
                 first_name: 'moise',
                 last_name: 'rwibutso',
