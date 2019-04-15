@@ -101,7 +101,7 @@ const User = {
             res.status(200).send({
                 status: 200,
                 message: 'Successfully Logged In',
-                usesToken: accessToken,
+                userToken: accessToken,
                 data: lodash.pick(findUser, ['id', 'email'])
             });
 

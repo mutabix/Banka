@@ -1,9 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../server';
-import accounts from '../../models/account';
-import moment from 'moment';
-
 const expect = chai.expect;
 chai.use(chaiHttp);
 
@@ -12,12 +9,7 @@ describe('Accounts', () => {
     describe('POST api/v1/accounts', () => {
         it('Creates a new bank account', (done) => {
 
-            let m = moment();
-            let real_date = m.format('dddd, MMMM Do YYYY, h:mm a');
-
-            const newAccount = {
-                created_on: real_date,
-                account_number: accounts.length + 1,
+            const account = {
                 owner: 1,
                 type: 'current',
                 status: 'active',
@@ -27,9 +19,10 @@ describe('Accounts', () => {
             chai
                 .request(app)
                 .post('/api/v1/accounts')
+                .send(account)
                 .end((err, res) => {
                     res.body.status.should.be.eql(201);
-                    expect(newAccount).is.an('object');
+                    expect(account).is.an('object');
 
                     if (err) {
                         expect(res).to.have.status(400);

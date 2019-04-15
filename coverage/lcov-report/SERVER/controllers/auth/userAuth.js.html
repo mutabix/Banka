@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">82.35% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>17/34</span>
+        <span class='fraction'>28/34</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">12.5% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>1/8</span>
+        <span class='fraction'>4/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">33.33% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/3</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">58.62% </span>
+        <span class="strong">93.1% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>17/29</span>
+        <span class='fraction'>27/29</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -232,39 +232,39 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -346,46 +346,46 @@ const User = {
 &nbsp;
     },
 &nbsp;
-<span class="fstat-no" title="function not covered" >    async u</span>serLogIn(req, res) {
+    async userLogIn(req, res) {
         
         const {
             error
-        } = <span class="cstat-no" title="statement not covered" >loginFields(r</span>eq.body);
+        } = loginFields(req.body);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (error) <span class="cstat-no" title="statement not covered" >return r</span></span>es.send({
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (error) <span class="cstat-no" title="statement not covered" >return r</span>es.send({
             status: 404,
             error: error.details[0].message
         });
 &nbsp;
-        const { email, password } = <span class="cstat-no" title="statement not covered" >req.body;</span>
+        const { email, password } = req.body;
 &nbsp;
-        const  findUser =  <span class="cstat-no" title="statement not covered" >await users.f</span>ind( <span class="fstat-no" title="function not covered" >us </span>=&gt; <span class="cstat-no" title="statement not covered" >us.email == email); </span>
+        const  findUser =  await users.find( us =&gt; us.email == email); 
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            if (!findUser) <span class="cstat-no" title="statement not covered" >return r</span></span>es.status(404).send({
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (!findUser) <span class="cstat-no" title="statement not covered" >return r</span>es.status(404).send({
                 status: 404,
                 error: 'User Not Found!'
             });
 &nbsp;
-        const compared_password =  <span class="cstat-no" title="statement not covered" >await comparePassword(f</span>indUser.password, password);
+        const compared_password =  await comparePassword(findUser.password, password);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        try{</span>
+        try{
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            if(!compared_password) <span class="cstat-no" title="statement not covered" >return r</span></span>es.status(401).send({
+            <span class="missing-if-branch" title="if path not taken" >I</span>if(!compared_password) <span class="cstat-no" title="statement not covered" >return r</span>es.status(401).send({
                 status: 401, 
                 error: 'Invalid Password!'
             });
 &nbsp;
-            const accessToken = <span class="cstat-no" title="statement not covered" >jwt.s</span>ign({
+            const accessToken = jwt.sign({
                 id: findUser.id,
                 email: findUser.email
             }, config.secretKey, {
                 expiresIn: 3600
             });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            res.</span>status(200).send({
+            res.status(200).send({
                 status: 200,
                 message: 'Successfully Logged In',
-                usesToken: accessToken,
+                userToken: accessToken,
                 data: lodash.pick(findUser, ['id', 'email'])
             });
 &nbsp;
@@ -406,7 +406,7 @@ export default User;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Apr 14 2019 16:27:40 GMT+0200 (Central Africa Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 15 2019 11:47:12 GMT+0200 (Central Africa Time)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

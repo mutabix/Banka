@@ -2,12 +2,13 @@ import Joi from 'joi';
 
 
 const accountValidator = (account) => {
+    
     const schema = {
         create_on: Joi.date(),
-        owner: Joi.number().integer(),
-        type: Joi.string().regex(/^\S+$/).valid(['savings', 'current']).min(3).max(255),
-        status: Joi.string().regex(/^\S+$/).min(3).max(255), 
-        balance: Joi.number().integer(),
+        owner: Joi.number().integer().required(),
+        type: Joi.string().regex(/^\S+$/).valid(['savings', 'current']).min(3).max(255).required(),
+        status: Joi.string().regex(/^\S+$/).min(3).max(255).required(), 
+        balance: Joi.number().required(),
 
     };
 

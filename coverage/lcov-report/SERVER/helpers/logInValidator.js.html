@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">44.44% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>4/9</span>
+        <span class='fraction'>9/9</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,21 +30,21 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">44.44% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/9</span>
+        <span class='fraction'>9/9</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -79,42 +79,42 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Joi from 'joi';
 import bcrypt from 'bcryptjs';
 &nbsp;
-const loginFields = (<span class="fstat-no" title="function not covered" >findUser) =&gt; {</span>
-    const schema = <span class="cstat-no" title="statement not covered" >{</span>
+const loginFields = (findUser) =&gt; {
+    const schema = {
         email: Joi.string().regex(/^\S+$/).email().required(),
         password: Joi.string().regex(/^\S+$/).min(3).max(255).required(),
 &nbsp;
     };
 &nbsp;
-    const options = <span class="cstat-no" title="statement not covered" >{</span>
+    const options = {
         language: {
             key: '{{key}} ',
             string: {
@@ -125,12 +125,12 @@ const loginFields = (<span class="fstat-no" title="function not covered" >findUs
         }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return J</span>oi.validate(findUser, schema, options);
+    return Joi.validate(findUser, schema, options);
 }
 &nbsp;
-const comparePassword = <span class="fstat-no" title="function not covered" >(e</span>ncrypted_password, password) =&gt; {
-    const compared_password = <span class="cstat-no" title="statement not covered" >bcrypt.c</span>ompare(password, encrypted_password);
-<span class="cstat-no" title="statement not covered" >    return c</span>ompared_password;
+const comparePassword = (encrypted_password, password) =&gt; {
+    const compared_password = bcrypt.compare(password, encrypted_password);
+    return compared_password;
 };
 &nbsp;
 export { loginFields, comparePassword};</pre></td></tr>
@@ -139,7 +139,7 @@ export { loginFields, comparePassword};</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Apr 14 2019 16:27:40 GMT+0200 (Central Africa Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 15 2019 11:47:12 GMT+0200 (Central Africa Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>
