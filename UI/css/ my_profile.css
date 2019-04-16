@@ -1,0 +1,123 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+@media(min-width: 700px) {
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .main-container {
+        min-height: 670px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        height: auto;
+        overflow: hidden;
+    }
+
+    .header {
+        display: flex;
+        background: #fff;
+        grid-column: span 13;
+        grid-row: 1;
+        height: 60px;
+        position: sticky;
+        border-bottom: 1px solid #DBE0E4;
+        box-shadow: 0 14px 18px rgba(0, 0, 0, 0.10)
+    }
+
+    .header .logo {
+        display: flex;
+        width: 11%;
+        height: inherit;
+
+    }
+
+    .header i {
+        margin: 20px;
+        font-size: 25px;
+
+    }
+
+
+    #banka {
+        color: #b8860b;
+        margin: 0;
+    }
+
+    .content-container{
+        grid-column: span 13;
+        grid-row: 2;
+        margin: 3% auto;
+        width: 40%; 
+    }
+
+    .content-container h2{
+        text-align: center;
+    }
+    
+    .client-image img{
+        margin-left: 30%;
+        width: 150px;
+        height: 150px;
+        border-radius: 55%;
+        border: 3px solid #b8860b;
+        cursor: pointer;
+        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    [contenteditable]:focus {
+        outline: 0px solid transparent;
+    }
+
+    .client-details{
+        margin-top: 20px;
+        border: 1px solid #000; 
+        border-radius: 6px;
+        padding-bottom: 20px;
+        
+    }
+
+    .details-list li{
+        list-style-type: none;
+        padding: 8px;
+        border-bottom: 1px solid #DBE0E4;
+        
+    }
+
+    .save-changes button {
+        border: none;
+        width:100px;
+        margin-left: 20%;
+        padding: 6px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    .save-btn{
+        background: #4CAF50;
+    }
+
+    .cancel-btn{
+        background: #f44336
+    }
+
+    .footer{
+        grid-column: span 13;
+        grid-row: 6;
+    }
+
+    .footer p{
+        margin-top: 100px;
+        text-align: center;
+        font-size: 17px;
+        font-weight: bold;
+        color: #000;
+    }
+
+    .footer p:hover{
+        color: #b8860b;
+    }
+}

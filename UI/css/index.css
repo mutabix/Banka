@@ -18,7 +18,7 @@ body {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        min-height: 670px;
+        min-height: 750px;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         height: auto;
@@ -50,7 +50,7 @@ body {
     } 
 
     .register-buttons{
-        margin-left: 70%;
+        margin-left: 63%;
         justify-content: space-between;
         width: 20%;
         font-family: 'Ubuntu', sans-serif;
@@ -68,8 +68,36 @@ body {
         font-size: 15px;
         border-radius: 5px;
         box-shadow: 0 14px 28px rgba(0,0,0,0.20), 0 10px 10px rgba(0,0,0,0.20);
-       
     }
+
+    #adminLogin{
+        position: absolute;
+        margin-top: -15px;
+        margin-left: 10px;
+        height: 78px;
+
+    }
+
+    #adminLogin:hover{
+        color: #b8860b;
+    }
+
+    #adminLogin i{
+        margin-top: 30px;
+        display: flex;
+    }
+
+
+    #adminLogin p{
+        margin-top: 0;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 15px;
+        margin-top: 11px;
+        padding: 2px;
+
+    }
+
+
 
     .register-buttons .signup-btn {
         margin-right: 30px;
@@ -80,13 +108,35 @@ body {
         margin: 0;
     }
     .content-container{
-        grid-column: span 13;
-        grid-row: 2/6;
+        grid-column:  3/11;
+        grid-row: 2/6;   
     }
     .content-container h2 {
         text-align: center;
-        margin: 200px auto;
+        margin: 200px  0px auto;
+        border: 2px solid black;
+        padding: 15px;
+        background: #000; 
+        color: #fff;
+        border-radius: 6px;
     }
+
+    .start-btn {
+        text-align: center;
+        margin: 50px auto;
+        width: 17%;
+        height: 80px;
+        cursor: pointer;
+        background: #b8860b;
+        border-radius: 6px;
+    }
+
+    .start-btn i{
+        margin-top: 12px;
+        margin-bottom: 0px;
+       font-size: 23px;
+    }
+
     .footer{
         grid-column: span 13;
         grid-row: 6;
@@ -151,7 +201,7 @@ body {
     .register-buttons{
         display: flex;
         margin-top: 10px;
-        margin-left: 42%;
+        margin-left: 40%;
         justify-content: space-between;
         width: 20%;
         font-family: 'Ubuntu', sans-serif;
@@ -163,7 +213,7 @@ body {
         cursor: pointer;
         margin: 8px auto;
         padding: 6px;
-        width: 100px;
+        width: 70px;
         border: none;
         background:#b8860b;
         font-size: 15px;
@@ -180,15 +230,64 @@ body {
         margin: 0;
     }
 
+    #adminLogin{
+        position: absolute;
+        margin-top: -17px;
+        margin-left: 150px;
+        height: 78px;
+
+    }
+
+    #adminLogin:hover{
+        color: #b8860b;
+    }
+
+    #adminLogin i{
+        margin-top: 22px;
+        display: flex;
+    }
+
+
+    #adminLogin p{
+        margin-top: 0;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 15px;
+        margin-top: 11px;
+        padding: 2px;
+
+    }
+
     .content-container{
         grid-column: span 13;
-        grid-row: 2/6;
+        grid-row: 3/5;
     }
     .content-container h2 {
         text-align: center;
         margin: 200px auto;
         word-wrap: break-word;
+        padding: 15px;
+        background: #000; 
+        color: #fff;
+        border-radius: 6px;
+
     }
+
+    .start-btn {
+        text-align: center;
+        margin: 50px auto;
+        width: 17%;
+        height: 80px;
+        cursor: pointer;
+        background: #b8860b;
+        border-radius: 6px;
+    }
+
+    .start-btn i{
+        margin-top: 12px;
+        margin-bottom: 0px;
+       font-size: 23px;
+    }
+
     .footer{
         grid-column: span 13;
         grid-row: 6;

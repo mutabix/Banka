@@ -6,5 +6,5 @@ function formValidator() {
     if (email==null || email=="" || pwd.length < 6) {
         return result.innerHTML = 'Invalid email or  wrong password.'
     };
-    window.location.assign('my_profile.html');
+    window.location.assign('client.html');
 }

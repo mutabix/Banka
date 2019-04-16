@@ -80,14 +80,31 @@ body{
     }
 
     .transaction-card {
-        margin: 180px  40px auto;
+        margin: 140px  40px auto;
         background: #fff;
         border-radius: 10px;
         width: 50%; 
         padding: 50px;
-        height: 120px;
+        height: 280px;
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
+    }
+
+    .user-info{
+        height: 150px;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .user-info img{
+        margin: 25px 10px 0 0;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    .user-info ul li{
+        list-style-type: none;
     }
 
     .transaction-card input{
@@ -106,7 +123,7 @@ body{
        margin: 10px 30px auto;
        background: #008000;
        width: 30%;
-       height: 30%;
+       height: 12%;
        border-radius: 6px;
        font-size: 17px;
        border: none;
