@@ -1,5 +1,4 @@
 import lodash from 'lodash';
-import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import users from '../../models/user';
 import config from '../../config/config';
@@ -20,8 +19,8 @@ const User = {
             error
         } = signUpFields(req.body);
 
-        if (error) return res.send({
-            status: 404,
+        if (error) return res.status(400).json({
+            status: 400,
             error: error.details[0].message
         });
 
@@ -33,8 +32,7 @@ const User = {
             last_name: req.body.last_name,
             email: req.body.email,
             password: encrypted_password,
-            type: req.body.type,
-            is_admin: req.body.is_admin
+            is_admin: false
         }
 
         try {
@@ -46,7 +44,7 @@ const User = {
             });
 
             users.push(user);
-            res.status(201).send({
+            return res.status(201).json({
                 status: 201,
                 message: 'Successfully Signed Up!',
                 userToken: token,
@@ -54,7 +52,7 @@ const User = {
             });
 
         } catch (error) {
-            return res.status(400).send({
+            return res.status(400).json({
                 status: 400,
                 error: error
             })
@@ -68,7 +66,7 @@ const User = {
             error
         } = loginFields(req.body);
 
-        if (error) return res.send({
+        if (error) return res.json({
             status: 404,
             error: error.details[0].message
         });
@@ -77,7 +75,7 @@ const User = {
 
         const  findUser =  await users.find( us => us.email == email); 
 
-            if (!findUser) return res.status(404).send({
+            if (!findUser) return res.status(404).json({
                 status: 404,
                 error: 'User Not Found!'
             });
@@ -86,7 +84,7 @@ const User = {
 
         try{
 
-            if(!compared_password) return res.status(401).send({
+            if(!compared_password) return res.status(401).json({
                 status: 401, 
                 error: 'Invalid Password!'
             });
@@ -98,7 +96,7 @@ const User = {
                 expiresIn: 3600
             });
 
-            res.status(200).send({
+            return res.status(200).json({
                 status: 200,
                 message: 'Successfully Logged In',
                 userToken: accessToken,
@@ -106,7 +104,7 @@ const User = {
             });
 
         } catch(error){
-            return res.status(404).send({
+            return res.status(404).json({
                 status: 404, 
                 error: error 
             })

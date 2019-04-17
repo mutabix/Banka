@@ -6,9 +6,7 @@ const signUpFields = (user) => {
         first_name: Joi.string().regex(/^\S+$/).min(3).max(20).required(),
         last_name: Joi.string().regex(/^\S+$/).min(3).max(20).required(),
         email: Joi.string().regex(/^\S+$/).email().required(),
-        type: Joi.string().regex(/^\S+$/).min(3).max(20).required(),
         password: Joi.string().regex(/^\S+$/).min(3).max(255).required(), 
-        is_admin: Joi.boolean()
 
     };
 

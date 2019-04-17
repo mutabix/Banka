@@ -8,7 +8,7 @@ const accountValidator = (account) => {
         owner: Joi.number().integer().required(),
         type: Joi.string().regex(/^\S+$/).valid(['savings', 'current']).min(3).max(255).required(),
         status: Joi.string().regex(/^\S+$/).min(3).max(255).required(), 
-        balance: Joi.number().required(),
+        initial_balance: Joi.number().required(),
 
     };
 
