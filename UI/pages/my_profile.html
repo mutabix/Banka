@@ -5,234 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/my_profile.css">
-    <link rel="stylesheet" href="../css/account_form.css">
-    <link rel="stylesheet" href="../assets/css/all.css">
     <link rel="shortcut icon" type="image/x-icon" href="../images/money-check-alt.png">
-    <title>Banka | My Profile</title>
+    <link rel="stylesheet" href="../assets/css/all.css">
+    <link rel="stylesheet" href="../css/ my_profile.css">
+
+    <title>Banka | My Profile </title>
 </head>
 
 <body>
+    <div class="main-container">
+        <header class="header">
+            <a class="logo" href="/">
 
-    <div class="main-container" id="dashboard">
-
-        <header>
-            <div class="user">
-                <img src="../images/jack.jpg" alt="">
-                <div class="identity">
-                    <a href="#">
-                        <p>Jack Blake</p>
-                    </a>
-                    <p>User</p>
-                </div>
-
-                <span class="bell-icon">
-                    <i class="fas fa-bell"></i>
-                </span>
-
-                <span class="setting-icon">
-
-                    <i class="fas fa-cog" id="drop-cog"></i>
-
-                    <ul class="dropdown-menu">
-
-                        <a href="">
-                            <li>Settings</li>
-                        </a>
-                        <a href="/">
-                            <li>Logout</li>
-                        </a>
-                    </ul>
-                </span>
-            </div>
-        </header>
-
-        <nav role="navigation">
-            <div id="menuToggle">
-
-                <input type="checkbox" />
-
-                <div></div>
-                <div></div>
-                <div></div>
-
-                <ul id="menu">
-
-                    <a href="#">
-                        <li>
-                            <span class="content-side-icons"><i class="fas fa-envelope"></i></span>
-                            Inbox
-                        </li>
-                    </a>
-
-                    <a href="#">
-                        <li>
-                            <span class="content-side-icons"><i class="fas fa-history"></i></span>
-                            History
-                        </li>
-                    </a>
-
-
-                    <a href="#" onclick="document.getElementById('form').style.display='block'">
-                        <li>
-                            <span class="content-side-icons"><i class="fas fa-plus"></i></span>
-                            New account
-                        </li>
-                    </a>
-
-                    <a href="accounts.html">
-                        <li>
-                            <span class="content-side-icons"><i class="fas fa-tasks"></i></span>
-                            Manage Accounts
-
-
-                        </li>
-                    </a>
-
-                    <a href="#">
-                        <li>
-                            <span class="content-side-icons"><i class="fas fa-cog"></i></span>
-                            Settings
-
-
-                        </li>
-                    </a>
-
-                    <a href="/">
-                        <li>
-                            <span class="content-side-icons"><i class="fas fa-power-off"></i></span>
-                            Logout
-
-
-                        </li>
-                    </a>
-
-                </ul>
-            </div>
-        </nav>
-
-        <aside class="side-content">
-            <a href="/">
-                <span>
+                <span id="logo-icon">
                     <i class="fas fa-money-check-alt" style="background: #b8860b"></i>
                 </span>
-                <h1>Ban<span id="banka">ka</span></h1>
+                <h2>Ban<span id="banka">ka</span></h2>
             </a>
+        </header>
 
-
-            <ul class="side-content-list">
-
-                <a href="#" onclick="document.getElementById('form').style.display='block'">
-                    <li>
-                        <span class="content-side-icons"><i class="fas fa-plus"></i></span>
-
-                        New Account
-                    </li>
-                </a>
-
-                <a href="#">
-                    <li>
-                        <span class="content-side-icons"><i class="fas fa-history"></i></span>
-                        History
-                    </li>
-                </a>
-
-                <a href="#">
-                    <li>
-                        <span class="content-side-icons"><i class="fas fa-envelope"></i></span>
-                        Inbox
-                    </li>
-                </a>
-
-
-            </ul>
-        </aside>
-
-        <main id="dashboard-info">
-
-            <div class="accounts-table">
-
-                <table cellspacing="0">
-                    <thead>
-                        <tr class="table-head">
-                            <th class="column">Account Type</th>
-                            <th class="column">Transaction Type</th>
-                            <th class="column">Amount</th>
-                            <th class="column">Date</th>
-                            <th></th>
-
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr class="data-head" data-id="1" data-toggle="modal" data-target="#accountModal">
-                            <td class="data">Savings</td>
-                            <td class="data">Debit</td>
-                            <td class="data"> $ 5,000</td>
-                            <td class="data" id="switch-button"> 1-1-2019</td>
-                        </tr>
-
-                        <tr class="data-head" data-id="2" data-toggle="modal" data-target="#accountModal">
-                            <td class="data">Savings</td>
-                            <td class="data">Debit</td>
-                            <td class="data"> $ 5,000</td>
-                            <td class="data" id="switch-button"> 23-3-2019</td>
-                        </tr>
-
-                        <tr class="data-head" data-id="3" data-toggle="modal" data-target="#accountModal">
-                            <td class="data">Savings</td>
-                            <td class="data">Debit</td>
-                            <td class="data"> $ 5,000</td>
-                            <td class="data" id="switch-button"> 08-4-2019</td>
-                        </tr>
-
-
-                    </tbody>
-                </table>
+        <main class="content-container">
+            <h2>My Profile</h2>
+            <div class="client-image">
+                <img src="../images/jack.jpg" alt="">
             </div>
 
-        </main>
+            <div class="client-details">
+                <ul class="details-list" contenteditable="true">
+                    <li> First Name: Jack</li>
+                    <li>Last Name: Blake</li>
+                    <li>Gender: M</li>
+                    <li>Birth Date: 12-02-1990</li>
+                    <li>Address: New York City</li>
+                    <li>Account Type: Savings</li>
+                </ul>
 
-        <div class="form-container" id="form">
-            <span class="close" title="Close Form" id="closebtn">&times;</span>
-
-            <form action="" class="form-content">
-                <label for="firstname">First Name *
-                    <input type="text" name="firstname" id="firstName" required>
-                </label>
-
-                <label for="lastname">Last Name *
-                    <input type="text" name="firstname" id="lastName" required>
-                </label>
-
-                <label for="account">Account Type *
-                    <select name="account" id="account" required>
-                        <option value="">Choose Account Type</option>
-                        <option value="savings">Savings</option>
-                        <option value="current">Current</option>
-                    </select>
-
-                </label>
-
-                <label for="balance">Initial Balance*
-                    <input type="text" name="balance" id="balance" required>
-                </label>
-
-                <div class="clearfix">
-
-                    <button type="button" class="createbtn">Create</button>
-                    <button type="button" class="cancelbtn">Cancel</button>
+                <div class="save-changes">
+                    <a href="#"><button class="save-btn">Save Changes</button></a>
+                    <a href="#"><button class="cancel-btn">Cancel</button></a>
 
                 </div>
-            </form>
-        </div>
+            </div>
+        </main>
 
         <footer class="footer">
             <p>&copy; Banka 2019</p>
         </footer>
     </div>
-
-    <script type="text/javascript" src="../js/newAccount.js"></script>
 </body>
 
-</html>
+</html> 

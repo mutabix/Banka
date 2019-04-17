@@ -6,6 +6,6 @@ function formValidator() {
         result.innerHTML = 'Password should be 6 characters long.'
         return;
     };
-    window.location.assign('my_profile.html');
+    window.location.assign('client.html');
 
 }
