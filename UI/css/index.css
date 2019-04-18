@@ -3,9 +3,17 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Ubuntu', sans-serif;
+    background: url('../images/money.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-@media(min-width: 800px) {
+
+/* Desktop screen */
+
+@media(min-width: 760px) {
 
     a{
         text-decoration: none;
@@ -13,12 +21,7 @@ body {
     }
 
     .main-container {
-        background: url('../images/money.jpg') no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        min-height: 750px;
+        height: 100%;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         height: auto;
@@ -156,6 +159,156 @@ body {
 }
 
 
+
+/* Ipads screen */
+
+
+@media (min-width: 500px){
+
+    a{
+        text-decoration: none;
+        color: #000;
+    }
+
+    .main-container {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        height: auto;
+        overflow: hidden;
+    }
+
+    .header{
+        display: flex;
+        background: #fff;
+        grid-column: span 13;
+        grid-row: 1;
+        height: 60px;
+        position: sticky;
+        border-bottom: 1px solid #DBE0E4;
+        box-shadow: 0 14px 18px rgba(0,0,0,0.10);
+    }
+
+
+    .header .logo {
+        display: flex;
+        width: 11%;
+        height: inherit;
+
+    } 
+    .header i{
+        margin: 20px;
+        font-size: 25px;    
+
+    } 
+
+    .register-buttons{
+        margin-left: 63%;
+        justify-content: space-between;
+        width: 20%;
+        font-family: 'Ubuntu', sans-serif;
+
+    }
+
+    .register-buttons a button{
+        
+        cursor: pointer;
+        margin: 19px auto;
+        padding: 6px;
+        width: 100px;
+        border: none;
+        background:#b8860b;
+        font-size: 15px;
+        border-radius: 5px;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.20), 0 10px 10px rgba(0,0,0,0.20);
+    }
+
+    #adminLogin{
+        position: absolute;
+        margin-top: -15px;
+        margin-left: 10px;
+        height: 78px;
+
+    }
+
+    #adminLogin:hover{
+        color: #b8860b;
+    }
+
+    #adminLogin i{
+        margin-top: 30px;
+        display: flex;
+    }
+
+
+    #adminLogin p{
+        margin-top: 0;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 15px;
+        margin-top: 11px;
+        padding: 2px;
+
+    }
+
+
+
+    .register-buttons .signup-btn {
+        margin-right: 30px;
+    }
+
+    #banka{
+        color: #b8860b;
+        margin: 0;
+    }
+    .content-container{
+        grid-column:  3/11;
+        grid-row: 2/6;   
+    }
+    .content-container h2 {
+        text-align: center;
+        margin: 200px  0px auto;
+        border: 2px solid black;
+        padding: 15px;
+        background: #000; 
+        color: #fff;
+        border-radius: 6px;
+    }
+
+    .start-btn {
+        text-align: center;
+        margin: 50px auto;
+        width: 17%;
+        height: 80px;
+        cursor: pointer;
+        background: #b8860b;
+        border-radius: 6px;
+    }
+
+    .start-btn i{
+        margin-top: 12px;
+        margin-bottom: 0px;
+       font-size: 23px;
+    }
+
+    .footer{
+        grid-column: span 13;
+        grid-row: 6;
+    }
+
+    .footer p{
+        margin-top: 100px;
+        text-align: center;
+        font-size: 17px;
+        font-weight: bold;
+        color: #000;
+    }
+
+    .footer p:hover{
+        color: #b8860b;
+    }
+
+}
+
 @media(max-width: 700px){
     a{
         text-decoration: none;
@@ -205,7 +358,6 @@ body {
         justify-content: space-between;
         width: 20%;
         font-family: 'Ubuntu', sans-serif;
-        border: 2px solid red;
 
 
     }
@@ -221,7 +373,6 @@ body {
         font-size: 15px;
         border-radius: 5px;
         box-shadow: 0 14px 28px rgba(0,0,0,0.20), 0 10px 10px rgba(0,0,0,0.20);
-        border: 2px solid blue;
 
     }
 
