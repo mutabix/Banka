@@ -37,8 +37,8 @@ const Admin = {
                 data: lodash.pick(admin, ['id', 'first_name', 'last_name', 'email', 'type', 'is_admin'])
             });
         }catch(error){
-            return res.status(400).json({
-                status: 400,
+            return res.status(500).json({
+                status: 500,
                 error: error
             })
         }
@@ -80,8 +80,8 @@ const Admin = {
             });
 
         } catch(error){
-            return res.status(404).json({
-                status: 404, 
+            return res.status(500).json({
+                status: 500, 
                 error: error 
             })
         }

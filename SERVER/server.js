@@ -24,8 +24,8 @@ app.get('/', (req, res) =>{
 });
 
 app.use('*', (req, res) =>{
-    res.status(404).json({
-        status: 404,
+    res.status(400).json({
+        status: 400,
         message: 'Wrong Url or HTTP Request!'
     });
 });

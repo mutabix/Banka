@@ -13,7 +13,7 @@ describe('Accounts', () => {
                 owner: 1,
                 type: 'current',
                 status: 'active',
-                balance: 500.90
+                initial_balance: 500.90
             };
 
             chai
@@ -72,7 +72,7 @@ describe('Accounts', () => {
                 .request(app)
                 .get('/fxd/hy')
                 .end((err, res) => {
-                    expect(res.body.status).to.be.eql(404);
+                    expect(res.body.status).to.be.eql(400);
                     expect(res.body.message).to.be.eql('Wrong Url or HTTP Request!');
                     done();
                 });

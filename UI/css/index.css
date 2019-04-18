@@ -5,7 +5,7 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
-@media(min-width: 760px) {
+@media(min-width: 800px) {
 
     a{
         text-decoration: none;
@@ -201,10 +201,12 @@ body {
     .register-buttons{
         display: flex;
         margin-top: 10px;
-        margin-left: 40%;
+        margin-left: 30%;
         justify-content: space-between;
         width: 20%;
         font-family: 'Ubuntu', sans-serif;
+        border: 2px solid red;
+
 
     }
 
@@ -219,6 +221,8 @@ body {
         font-size: 15px;
         border-radius: 5px;
         box-shadow: 0 14px 28px rgba(0,0,0,0.20), 0 10px 10px rgba(0,0,0,0.20);
+        border: 2px solid blue;
+
     }
 
     .register-buttons .signup-btn {
@@ -275,7 +279,7 @@ body {
     .start-btn {
         text-align: center;
         margin: 50px auto;
-        width: 17%;
+        width: 30%;
         height: 80px;
         cursor: pointer;
         background: #b8860b;

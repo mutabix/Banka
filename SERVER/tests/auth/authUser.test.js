@@ -11,12 +11,10 @@ describe('User Authentication', () => {
         it('Should sign up a new user', (done) => {
 
             const newUser = {
-                first_name: 'moise',
-                last_name: 'rwibutso',
-                email: 'moise@kigali.com',
-                password: '123456',
-                type: 'staff',
-                is_admin: true
+                first_name: 'kalisa',
+                last_name: 'emmy',
+                email: 'kalisa@kigali.com',
+                password: '123456'
             };
             chai
                 .request(app)
@@ -39,7 +37,7 @@ describe('User Authentication', () => {
         it('Should log in a returning user ', (done) => {
             const user = {
                 
-                email: 'moise@kigali.com',
+                email: 'kalisa@kigali.com',
                 password: '123456'
             };
             chai
@@ -47,7 +45,6 @@ describe('User Authentication', () => {
                 .post('/auth/login')
                 .send(user)
                 .end((err, res) => {
-                    console.log(res.body);
                     res.body.status.should.be.eql(200);
                     expect(user).is.an('object');
 
@@ -68,7 +65,7 @@ describe('User Authentication', () => {
                 .request(app)
                 .get('/fxd/hy')
                 .end((err, res) => {
-                    expect(res.body.status).to.be.eql(404);
+                    expect(res.body.status).to.be.eql(400);
                     expect(res.body.message).to.be.eql('Wrong Url or HTTP Request!');
                     done();
                 });

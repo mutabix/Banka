@@ -1,68 +1,15 @@
-import transactions from '../models/transaction';
 import debitValidator from '../helpers/debitValidator';
 import creditValidator from '../helpers/creditValidator';
 import accounts from '../models/account';
+import transactions from '../models/transaction';
+
 
 import moment from 'moment';
-
 
 const Transaction = {
 
     async creditAccount(req, res) {
 
-        const {
-            error
-        } = debitValidator(req.body);
-
-        if (error) return res.status(400).json({
-            status: 400,
-            error: error.details[0].message
-        });
-
-        let m = moment();
-        const created_on = m.format('dddd, MMMM Do YYYY, h:mm a');
-
-        const foundAcc = accounts.find(ac => ac.account_number === parseInt(req.params.account_number));
-
-        const {
-            amount,
-            transaction_type,
-            cashier
-        } = req.body;
-
-        const sum = parseFloat(amount) + foundAcc.initial_balance;
-
-        try {
-
-            const newDebit = {
-                created_on: created_on,
-                transaction_id: transactions.length + 1,
-                account_number: foundAcc.account_number,
-                cashier: parseInt(cashier),
-                transaction_type: transaction_type,
-                amount: parseFloat(amount),
-                initial_balance: parseFloat(foundAcc.initial_balance),
-                new_balance: sum
-            }
-
-            transactions.push(newDebit);
-            return res.status(201).json({
-                status: 201,
-                message: 'Account successfully credited!',
-                data: newDebit
-            })
-
-        } catch (eror) {
-            return res.status(400).json({
-                status: 400,
-                error: error
-            })
-        }
-
-    },
-
-
-    async debitAccount(req, res) {
         const {
             error
         } = creditValidator(req.body);
@@ -75,7 +22,59 @@ const Transaction = {
         let m = moment();
         const created_on = m.format('dddd, MMMM Do YYYY, h:mm a');
 
-        const foundAcc = accounts.find(ac => ac.account_number === parseInt(req.params.account_number));
+        const foundAcc = await accounts.find(ac => ac.account_number === parseInt(req.params.account_number));
+
+        const {
+            amount,
+            transaction_type,
+            cashier
+        } = req.body;
+
+        const sum = parseFloat(amount) + foundAcc.initial_balance;
+
+        try {
+
+            const newCredit = {
+                created_on: created_on,
+                transaction_id: transactions.length + 1,
+                account_number: foundAcc.account_number,
+                cashier: parseInt(cashier),
+                transaction_type: transaction_type,
+                amount: parseFloat(amount),
+                initial_balance: parseFloat(foundAcc.initial_balance),
+                new_balance: sum
+            }
+
+            transactions.push(newCredit);
+            return res.status(201).json({
+                status: 201,
+                message: 'Account successfully credited!',
+                data: newCredit
+            })
+
+        }catch(error){
+            return res.status(500).json({
+                status: 500,
+                error: error
+            })
+        }
+
+    },
+
+    async debitAccount(req, res) {
+        const {
+            error
+        } = debitValidator(req.body);
+
+        if(error) return res.status(400).json({
+            status: 400,
+            error: error.details[0].message
+        });
+
+        let m = moment();
+        const created_on = m.format('dddd, MMMM Do YYYY, h:mm a');
+
+        const foundAcc = await accounts.find(ac => ac.account_number === parseInt(req.params.account_number));
 
         const {
             amount,
@@ -85,14 +84,13 @@ const Transaction = {
 
         const balance = foundAcc.initial_balance - parseFloat(amount);
 
-        if (foundAcc.initial_balance == 0 || foundAcc.initial_balance < parseFloat(amount)) return res.status(400).json({
+        if( foundAcc.initial_balance == 0 || foundAcc.initial_balance < parseFloat(amount)) return res.status(400).json({
             status: 400,
             error: 'You have insufficient balance!'
         })
 
         try {
-
-            const newCredit = {
+            const newDebit = {
                 created_on: created_on,
                 transaction_id: transactions.length + 1,
                 account_number: foundAcc.account_number,
@@ -103,16 +101,16 @@ const Transaction = {
                 new_balance: balance
             }
 
-            transactions.push(newCredit);
+            transactions.push(newDebit);
             return res.status(201).json({
                 status: 201,
                 message: 'Account successfully debited!',
-                data: newCredit
+                data: newDebit
             })
 
         } catch (error) {
-            return res.status(400).json({
-                status: 400,
+            return res.status(500).json({
+                status: 500,
                 error: error
             })
         }

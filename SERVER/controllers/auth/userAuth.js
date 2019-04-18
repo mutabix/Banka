@@ -52,8 +52,8 @@ const User = {
             });
 
         } catch (error) {
-            return res.status(400).json({
-                status: 400,
+            return res.status(500).json({
+                status: 500,
                 error: error
             })
         }
@@ -66,8 +66,8 @@ const User = {
             error
         } = loginFields(req.body);
 
-        if (error) return res.json({
-            status: 404,
+        if (error) return res.status(400).json({
+            status: 400,
             error: error.details[0].message
         });
 
@@ -104,8 +104,8 @@ const User = {
             });
 
         } catch(error){
-            return res.status(404).json({
-                status: 404, 
+            return res.status(500).json({
+                status: 500, 
                 error: error 
             })
         }

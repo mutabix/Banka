@@ -1,31 +1,33 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../server';
+import accounts from '../../models/account';
 
 const expect = chai.expect;
 chai.use(chaiHttp);
 
 
-describe('Transactions', () => {
-    describe('POST api/v1/:transaction_number/debit', () => {
-        it('Make a debit to a user\'s  account', (done) => {
 
-            const newDebit = {
-                account_number: 2,
+
+describe('Transactions', () => {
+    describe('POST api/v1/transactions/:account_number/debit', () => {
+        it('Make a debit to a user\'s  account', async () => {
+
+            
+            const newDebit = await {
                 cashier: 2,
                 transaction_type: 'debit',
-                old_balance: 1000,
                 amount: 1500,
-                new_balance: 2500
             }
 
+            console.log(newDebit);
             const account_number = 1;
             chai
                 .request(app)
                 .post(`/api/v1/transactions/${account_number}/debit`)
                 .send(newDebit)
                 .end((err, res) => {
-
+                    console.log(res.body);
                     res.body.status.should.be.eql(201);
                     expect(newDebit).is.an('object');
 
@@ -39,17 +41,16 @@ describe('Transactions', () => {
     });
 
     describe('POST api/v1/transactions/account_number/credit', () => {
-        it('Make a credit to a user\'s  account', (done) => {
+        it('Make a credit to a user\'s  account', async () => {
 
             const newCredit = {
-                account_number: 2,
                 cashier: 2,
                 transaction_type: 'credit',
-                old_balance: 1500,
                 amount: 1000,
-                new_balance: 500
             }
+
             const account_number = 1;
+
             chai
                 .request(app)
                 .post(`/api/v1/transactions/${account_number}/credit`)

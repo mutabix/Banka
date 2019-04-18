@@ -37,8 +37,8 @@ const Account = {
 
 
         } catch (error) {
-            return res.status(404).json({
-                status: 404,
+            return res.status(500).json({
+                status: 500,
                 error: error
             })
         }
@@ -47,7 +47,6 @@ const Account = {
     async getAllAccounts(req, res) {
 
         try {
-
             return res.status(200).json({
                 status: 200,
                 message: 'All accounts',
@@ -55,8 +54,8 @@ const Account = {
 
             })
         } catch (error) {
-            return res.status(400).json({
-                status: 400,
+            return res.status(500).json({
+                status: 500,
                 error: error,
             })
         }
@@ -77,8 +76,8 @@ const Account = {
                 data: foundAcc
             })
         } catch (error) {
-            return res.status(400).json({
-                status: 400,
+            return res.status(500).json({
+                status: 500,
                 error: error
             })
         }
@@ -100,7 +99,7 @@ const Account = {
             foundAcc.owner = req.body.owner;
             foundAcc.type = req.body.type;
             foundAcc.status = req.body.status;
-            foundAcc.balance = req.body.balance;
+            foundAcc.initial_balance = req.body.initial_balance;
             foundAcc.modified_on = modified_on;
 
             return res.status(200).json({
@@ -110,8 +109,8 @@ const Account = {
             })
 
         } catch (error) {
-            return res.status(400).json({
-                status: 400,
+            return res.status(500).json({
+                status: 500,
                 error: error
             })
         }
@@ -135,8 +134,8 @@ const Account = {
                 data: accounts
             })
         } catch (error) {
-            return res.status(400).json({
-                status: 400,
+            return res.status(500).json({
+                status: 500,
                 error: error
             })
         }
